@@ -1,5 +1,6 @@
 package com.example.Gestor.Gestor_Sueldos.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class Cliente {
     private String telefono;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonManagedReference
     private List<Factura> facturas;
 
 

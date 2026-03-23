@@ -1,5 +1,6 @@
 package com.example.Gestor.Gestor_Sueldos.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +27,9 @@ public class Factura {
     private String estado;
 
     @ManyToOne
+    @JsonIgnore
     private Cliente cliente;
+
 
     @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemFactura> items = new ArrayList<>();

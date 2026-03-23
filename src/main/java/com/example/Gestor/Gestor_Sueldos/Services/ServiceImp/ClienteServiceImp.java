@@ -37,9 +37,12 @@ public class ClienteServiceImp implements ClienteService {
         Cliente existente = obtenerClientePorId(id);
         existente.setNombre(cliente.getNombre());
         existente.setEmail(cliente.getEmail());
-        // agrega aquí otros campos que quieras actualizar
+        existente.setDireccion(cliente.getDireccion());
+        existente.setCuit(cliente.getCuit());
+        existente.setTelefono(cliente.getTelefono());
         return clienteRepository.save(existente);
     }
+
 
 
     @Override

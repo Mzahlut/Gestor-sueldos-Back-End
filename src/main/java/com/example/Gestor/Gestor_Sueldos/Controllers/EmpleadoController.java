@@ -28,6 +28,8 @@ public class EmpleadoController {
         return ResponseEntity.ok(empleado);
     }
 
+
+
     @PostMapping
     public Empleado crear(@RequestBody Empleado empleado) {
         return empleadoService.crearEmpleado(empleado);
